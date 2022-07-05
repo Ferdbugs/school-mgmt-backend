@@ -21,16 +21,30 @@ public class Student {
 	private String lastName;
 	@Column(name="email")
 	private String email;
+	@Column(name="grade")
+	private Integer grade;
+	@Column(name="type")
+	private String type;
 	
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
 	public Student() {
 		
 	}
 	
-	public Student(String firstName, String lastName, String email) {
+	public Student(String firstName, String lastName, String email, Integer grade, String type) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.email = email;
+		this.grade = grade;
+		this.type = type;
 	}
 	
 	public long getId() {
@@ -56,6 +70,12 @@ public class Student {
 	}
 	public void setEmail(String email) {
 		this.email = email;
+	}
+	public Integer getGrade() {
+		return grade;
+	}
+	public void setGrade(Integer grade) {
+		this.grade = grade;
 	}
 	
 	
