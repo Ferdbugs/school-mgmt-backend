@@ -39,7 +39,7 @@ public class UserServiceImplementation implements UserService, UserDetailsServic
 			throw new UsernameNotFoundException("User not found in the database.");
 		} else
 		{
-			log.info("User Found: {}", username);
+			log.info("User Found: {}, User Role: {}",username, user.getRoles());
 		}
 		
 		Collection<SimpleGrantedAuthority> authorities = new ArrayList<>();

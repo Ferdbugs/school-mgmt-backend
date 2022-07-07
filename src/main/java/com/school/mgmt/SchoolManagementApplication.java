@@ -29,14 +29,15 @@ public class SchoolManagementApplication {
 	CommandLineRunner run(UserService userService) {
 		return args -> {
 			
-			userService.saveUser(new User(1,"admin","admin","admin", new ArrayList<>()));
-			userService.saveUser(new User(2,"user","user","user", new ArrayList<>()));
-		
-			userService.saveRole(new Role(1,"ROLE_USER"));
-			userService.saveRole(new Role(2,"ROLE_ADMIN"));
-			
-			userService.addRoleToUser("admin","ROLE_ADMIN");
-			userService.addRoleToUser("user","ROLE_USER");
+			if(userService.getUser("admin")==null) {
+				
+				userService.saveUser(new User(1,"admin","admin","admin", new ArrayList<>()));
+				userService.saveUser(new User(2,"user","user","user", new ArrayList<>()));
+				userService.saveRole(new Role(1,"ROLE_USER"));
+				userService.saveRole(new Role(2,"ROLE_ADMIN"));
+				
+				userService.addRoleToUser("admin","ROLE_ADMIN");
+			}
 		};
 	}
 }
