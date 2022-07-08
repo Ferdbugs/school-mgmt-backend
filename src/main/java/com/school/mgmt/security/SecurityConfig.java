@@ -50,7 +50,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         .and()
         .csrf().disable();
 		http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
-//		http.authorizeRequests().antMatchers(HttpMethod.GET,"/api/v1/users").hasAuthority("ROLE_ADMIN");
+		//You can add role specific route protection here
 		http.addFilter(customAuthenticationFilter);
 		http.addFilterBefore(new CustomAuthorizationFilter(), UsernamePasswordAuthenticationFilter.class);
 	}

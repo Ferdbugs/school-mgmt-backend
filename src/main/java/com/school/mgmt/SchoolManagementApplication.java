@@ -12,8 +12,11 @@ import com.school.mgmt.domain.Role;
 import com.school.mgmt.domain.User;
 import com.school.mgmt.service.UserService;
 
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
+
 
 @SpringBootApplication
+@EnableSwagger2
 public class SchoolManagementApplication {
 
 	public static void main(String[] args) {

@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.school.mgmt.exception.ResourceNotFoundException;
 import com.school.mgmt.model.Student;
+import com.school.mgmt.model.Subject;
 import com.school.mgmt.repository.StudentRepository;
 
 @CrossOrigin
@@ -84,6 +85,11 @@ public class StudentController {
 		response.put("deleted", Boolean.TRUE);
 		
 		return ResponseEntity.ok(response);
+	}
+	
+	@GetMapping("/studentbygrade/{grade}")
+	public List<Student> getsubjectById(@PathVariable Integer grade) {
+		return studentRepository.findAllByGrade(grade);
 	}
 	
 }

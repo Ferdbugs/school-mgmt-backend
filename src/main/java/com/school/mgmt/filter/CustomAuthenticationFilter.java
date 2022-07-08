@@ -26,7 +26,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import lombok.extern.slf4j.Slf4j;
 
-@Slf4j
+@Slf4j 
 public class CustomAuthenticationFilter extends UsernamePasswordAuthenticationFilter {
 	
 	private final AuthenticationManager authenticationManager;

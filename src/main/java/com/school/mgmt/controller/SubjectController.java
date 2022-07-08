@@ -67,4 +67,10 @@ public class SubjectController {
 		
 		return ResponseEntity.ok(response);
 	}
+	
+	@GetMapping("/subjectbygrade/{grade}")
+	public List<Subject> getsubjectById(@PathVariable Integer grade) {
+		return subjectRepository.findAllByGrade(grade);
+		
+	}
 }
